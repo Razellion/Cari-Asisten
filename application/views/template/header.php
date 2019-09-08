@@ -19,6 +19,9 @@
       <a class="navbar-brand" href="#">
         <img src="assets/image/Logo_Telkom_University.png" height="60" alt="">
       </a>
+      <a href="#" style="border:2px solid black; border-radius:10px">
+        <img src="assets/image/search.jpg" height="60" style="margin:2px" alt="">
+      </a>
     </nav>
     <div class="nav" style="background-color: #C90014;">
         <a class="nav-item nav-link" href="#" style="margin-left:20px;">Home</a>
