@@ -86,6 +86,12 @@
       height: 80px;
       margin-top: -9%;
     }
+
+    #button{
+      width: 35%;
+      height: 50%;
+      padding-left: 10%;
+    }
 /*    #icon-bot{
       background-color: white;
       margin-left: 115px;
@@ -132,11 +138,16 @@
         <img src="<?php echo base_url('assets/image/clock.png') ?>"alt="" id="icon-bot"> Semester Genap 2018/2019
       </div>
     </div> 
-    <div class="row" id="attribute" style="height: auto;width: 100%;background-color: white;margin-left: auto;margin-right: auto; margin-top: -12%;">
+    <div class="row" id="attribute" style="height: auto;width: 100%;background-color: white;margin-left: auto;margin-right: auto; margin-top: -12%;padding:3%">
         lorem ipsum dolor amet
     </div>
-    <div class="row" id="attribute" style="height: auto;width: 100%;background-color: #dbdad7;margin-left: auto;margin-right: auto; margin-top:0;padding-left: 50%;padding-right: 50%">
-      hhehhee
+    <div class="row" id="attribute" style="height: auto;width: 100%;background-color: #dbdad7;margin-left: auto;margin-right: auto; margin-top:0;padding-top:10px;padding-bottom:10px;padding-left:40%">
+      <div class="col-md-3">
+        <a href=""><img src="<?php echo base_url('assets/image/edit.png') ?>"alt="" id="button"></a><p style="text-align: left; margin-left:0">Edit Post</p>
+      </div>
+      <div class="col-md-3">
+        <a href=""><img src="<?php echo base_url('assets/image/delete.png') ?>"alt="" id="button"></a><p style="text-align: left; padding-left: 5%">Delete Post</p>
+      </div>
     </div>
   </div>
 </body>
