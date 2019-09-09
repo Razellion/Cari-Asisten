@@ -90,7 +90,7 @@
     #button{
       width: 35%;
       height: 50%;
-      padding-left: 10%;
+      padding-left: auto;
     }
 /*    #icon-bot{
       background-color: white;
@@ -146,7 +146,7 @@
         <a href=""><img src="<?php echo base_url('assets/image/edit.png') ?>"alt="" id="button"></a><p style="text-align: left; margin-left:0">Edit Post</p>
       </div>
       <div class="col-md-3">
-        <a href=""><img src="<?php echo base_url('assets/image/delete.png') ?>"alt="" id="button"></a><p style="text-align: left; padding-left: 5%">Delete Post</p>
+        <a href=""><img src="<?php echo base_url('assets/image/delete.png') ?>"alt="" id="button"></a><p style="text-align: left; margin-left: -5%">Delete Post</p>
       </div>
     </div>
   </div>
