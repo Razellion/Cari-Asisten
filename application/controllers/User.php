@@ -5,9 +5,17 @@ class User extends CI_Controller {
 	{
 		$data['title'] = "Register";
 		$this->load->view('template/header',$data);
-		$this->load->view('home_register');
+		$this->load->view('homepage');
 		$this->load->view('template/footer');
 
+	}
+
+	public function register()
+	{
+		$data['title'] = "Register Student";
+		$this->load->view('template/header',$data);
+		$this->load->view('register');
+		$this->load->view('template/footer');
 	}
 
 	public function register_student()
