@@ -12,7 +12,6 @@ class User extends CI_Controller {
 
 	public function register_student()
 	{
-		
 		$data['title'] = "Register Student";
 		$this->load->view('template/header',$data);
 		$this->load->view('register_student');
@@ -35,10 +34,12 @@ class User extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-
-
-
-
-
+	public function page_detail()
+	{
+		$data['title'] = "Announcement Detail";
+		$this->load->view('template/header',$data);
+		$this->load->view('announcement_detail_page');
+		$this->load->view('template/footer');
+	}
 
 }

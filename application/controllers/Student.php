@@ -7,7 +7,23 @@ class Student extends CI_Controller {
 	{
       $data['title'] = "Student";
       $this->load->view('template/header_student',$data);
-      $this->load->view('homepage');
+      $this->load->view('homepage_student');
+      $this->load->view('template/footer');
+	}
+
+	public function page_detail()
+	{
+      $data['title'] = "Announcement Detail";
+      $this->load->view('template/header_student',$data);
+      $this->load->view('announcement_detail_page_student');
+      $this->load->view('template/footer');
+	}
+
+	public function apply()
+	{
+      $data['title'] = "Upload File";
+      $this->load->view('template/header_student',$data);
+      $this->load->view('upload_file');
       $this->load->view('template/footer');
 	}
 }

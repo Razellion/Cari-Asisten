@@ -154,37 +154,6 @@
     <div class="row" id="attribute" style="height: auto;width: 100%;background-color: white;margin-left: auto;margin-right: auto; margin-top: -12%;padding:3%">
         lorem ipsum dolor amet
     </div>
-    <div class="row" id="attribute" style="height: auto;width: 100%;background-color: #dbdad7;margin-right: auto; margin-top:0;padding-top:10px;padding-bottom:10px;padding-left:38%">
-      <div class="col-md-3">
-        <a href=""><img src="<?php echo base_url('assets/image/edit.png') ?>"alt="" id="button"></a><p style="text-align: left; margin-left:0%">Edit Post</p>
-      </div>
-      <div class="col-md-3">
-        <a href=""><img src="<?php echo base_url('assets/image/delete.png') ?>"alt="" id="button"></a><p style="text-align: left;margin-left:-5%">Delete Post</p>
-      </div>
-    </div>
-    <div class="row" id="attribute" style="height: auto;width: 100%;margin-left: auto;margin-right: auto;margin-top: 5%">
-      Applicants:
-    </div>
-    <table id="attribute" style="border-width: 2px;border-style: solid;border-color: black;background-color:#ffac9c;width: 100%;height: 100%">
-      <tr>
-        <td>Nana Suneno</td>
-        <td style="text-align: right">
-        <a href="" style="color:black">
-        <img src="<?php echo base_url('assets/image/file.png') ?>"alt="" id="file"/>
-        View File
-        </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Nana Suneno</td>
-        <td style="text-align: right">
-        <a href="" style="color:black">
-        <img src="<?php echo base_url('assets/image/file.png') ?>"alt="" id="file"/>
-        View File
-        </a>
-        </td>
-      </tr>
-    </table>
     <!-- <div class="row" id="attribute" style="height: auto;width: 100%;margin-left: auto;margin-right: auto">
       <div id="applicants"  style="border-color: black;border-width: 2px;border-style: solid;padding-top: 2px;height: 35px; width: 100%">
         <div style="display: inline-block;padding-left: 1%">

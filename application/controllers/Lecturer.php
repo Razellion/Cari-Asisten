@@ -7,7 +7,7 @@ class Lecturer extends CI_Controller {
 	{
 		$data['title'] = "Lecturer";
 		$this->load->view('template/header_lecturer',$data);
-    	$this->load->view('announcement_detail_page_lecturer');
+    	$this->load->view('homepage_lecturer');
     	$this->load->view('template/footer');
 	}
 
@@ -27,11 +27,19 @@ class Lecturer extends CI_Controller {
     	$this->load->view('template/footer');		
 	}
 
-	public function create_list_of_accepted_student()
+	public function create_list()
 	{
 		$data['title'] = "Create List of Accepted Student";
 		$this->load->view('template/header_lecturer',$data);
-    	$this->load->view('create list of accepted student');
+    	$this->load->view('create_list');
     	$this->load->view('template/footer');				
+	}
+
+	public function page_detail()
+	{
+		$data['title'] = "Announcement Detail";
+		$this->load->view('template/header_lecturer',$data);
+    	$this->load->view('announcement_detail_page_lecturer');
+    	$this->load->view('template/footer');
 	}
 }
