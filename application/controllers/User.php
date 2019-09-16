@@ -1,6 +1,11 @@
 <?php
 class User extends CI_Controller {
 
+	function __construct(){
+    	parent::__construct();
+    	$this->load->model('UserModel');
+  	}
+
 	public function index()
 	{
 		$data['title'] = "Register";
@@ -49,5 +54,95 @@ class User extends CI_Controller {
 		$this->load->view('announcement_detail_page');
 		$this->load->view('template/footer');
 	}
+
+	public function createAccStudent()
+  	{
+    	$this->load->model('UserModel');
+    	$password = $this->input->post('password');
+    	$email = $this->input->post('email');
+    	$name = $this->input->post('name');
+    	$nim = $this->input->post('nim');
+    	$phoneNumber = $this->input->post('phoneNumber');
+
+    	$user_insert = array (
+      	'password' => $password,
+      	'email' => $email,
+      	'name' => $name,
+      	'phoneNumber' => $phoneNumber
+    	);
+
+    	$register_user = $this->UserModel->register_user($user_insert, $email);
+
+    	$register_student = $this->UserModel->register_student($nim, $email);
+
+    	$login_user = $this->UserModel->login_user($email, $password);
+
+    	if (session_status() == PHP_SESSION_NONE) {
+    		session_start();
+		}
+
+    	if ($login_user){
+    	$sess_data = array(
+          	'logged_in' => 1,
+          	'email' => $login_user->email
+      	);
+      		$this->session->set_userdata($sess_data);
+      	}
+
+    	if ($register2) {
+     		redirect('user/register_student');
+    	} else {
+    		echo "Registration failed: email already exists!";
+			echo "<script>setTimeout(\"location.href = 'http://localhost/asiaplaystation/index.php/account/create2';\",1500);</script>";
+    	}
+  	}
+
+  	public function createAccLecturer()
+  	{
+    	$this->load->model('UserModel');
+    	$password = $this->input->post('password');
+    	$email = $this->input->post('email');
+    	$name = $this->input->post('name');
+    	$nip = $this->input->post('nip');
+    	$phoneNumber = $this->input->post('phoneNumber');
+    	$picProfile = $this->input->post('picProfile');
+
+    	$user_insert = array (
+      	'password' => $password,
+      	'email' => $email,
+      	'name' => $name,
+      	'phoneNumber' => $phoneNumber
+    	);
+
+    	$lecturer_insert = array (
+    	'picProfile' => $picProfile,
+    	'nip' => $nip
+    	)
+
+    	$register_user = $this->UserModel->register_user($user_insert, $email);
+
+    	$register_lecturer = $this->UserModel->register_student($lecturer_insert, $email);
+
+    	$login_user = $this->UserModel->login_user($email, $password);
+
+    	if (session_status() == PHP_SESSION_NONE) {
+    		session_start();
+		}
+
+    	if ($login_user){
+    	$sess_data = array(
+          	'logged_in' => 1,
+          	'email' => $login_user->email
+      	);
+      		$this->session->set_userdata($sess_data);
+      	}
+
+    	if ($register2) {
+     		redirect('user/register_student');
+    	} else {
+    		echo "Registration failed: email already exists!";
+			echo "<script>setTimeout(\"location.href = 'http://localhost/asiaplaystation/index.php/account/create2';\",1500);</script>";
+    	}
+  	}
 
 }
