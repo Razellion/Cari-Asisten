@@ -2,6 +2,19 @@
 
 class UserModel extends CI_Model{
 
+    public function login_user($email, $password){
+    $this->db->select('*');
+    $this->db->from('user');
+    $this->db->where('email',$email);
+    $this->db->where('password',$password);
+    $result = $this->db->get();
+    if($result->num_rows()==1){
+        return $result->row();
+    }else{
+        return false;
+    }
+  }
+
   public function login_student($email, $password){
     $this->db->select('*');
     $this->db->from('student');
@@ -30,20 +43,6 @@ class UserModel extends CI_Model{
     }
   }
 
-  public function login_admin($email, $password){
-    $this->db->select('*');
-    $this->db->from('admin');
-    $this->db->where('email',$email);
-    $this->db->where('password',$password);
-    $this->db->join('user', 'admin.user_email = user.email');
-    $result = $this->db->get();
-    if($result->num_rows()==1){
-        return $result->row(0);
-    }else{
-        return false;
-    }
-  }
-
   public function get_same($table, $email){
     $this->db->from($table);
     $this->db->where('email',$email);
@@ -59,7 +58,7 @@ class UserModel extends CI_Model{
   }
 
   public function register_user($data, $email){
-    $sql = $this->UserModel->get_same($email);
+    $sql = $this->UserModel->get_same('user', $email);
     if($sql == FALSE){
         return false;
     }else{
@@ -100,17 +99,6 @@ class UserModel extends CI_Model{
     }
   }
 
-  public function login_user($email, $password){
-    $this->db->select('*');
-    $this->db->from('user');
-    $this->db->where('email',$email);
-    $this->db->where('password',$password);
-    $result = $this->db->get();
-    if($result->num_rows()==1){
-        return $result->row();
-    }else{
-        return false;
-    }
-  }
+
 
 }

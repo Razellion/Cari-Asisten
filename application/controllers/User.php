@@ -75,26 +75,12 @@ class User extends CI_Controller {
 
     	$register_student = $this->UserModel->register_student($nim, $email);
 
-    	$login_user = $this->UserModel->login_user($email, $password);
-
-    	if (session_status() == PHP_SESSION_NONE) {
-    		session_start();
-		}
-
-    	if ($login_user){
-    	$sess_data = array(
-          	'logged_in' => 1,
-          	'email' => $login_user->email
-      	);
-      		$this->session->set_userdata($sess_data);
-      	}
-
-    	if ($register2) {
-     		redirect('user/register_student');
-    	} else {
-    		echo "Registration failed: email already exists!";
-			echo "<script>setTimeout(\"location.href = 'http://localhost/asiaplaystation/index.php/account/create2';\",1500);</script>";
-    	}
+       if ($register_user) {
+        redirect('user/login');
+      } else {
+        echo "Registration failed: email already exists!";
+      echo "<script>setTimeout(\"location.href = 'http://localhost/asiaplaystation/index.php/account/create2';\",1500);</script>";
+      }
   	}
 
   	public function createAccLecturer()
@@ -105,7 +91,8 @@ class User extends CI_Controller {
     	$name = $this->input->post('name');
     	$nip = $this->input->post('nip');
     	$phoneNumber = $this->input->post('phoneNumber');
-    	$picProfile = $this->input->post('picProfile');
+      $picProfile ="assets/image/";
+    	$picProfile .= $this->input->post('picProfile');
 
     	$user_insert = array (
       	'password' => $password,
@@ -117,32 +104,52 @@ class User extends CI_Controller {
     	$lecturer_insert = array (
     	'picProfile' => $picProfile,
     	'nip' => $nip
-    	)
+    	);
 
     	$register_user = $this->UserModel->register_user($user_insert, $email);
 
     	$register_lecturer = $this->UserModel->register_student($lecturer_insert, $email);
 
-    	$login_user = $this->UserModel->login_user($email, $password);
-
-    	if (session_status() == PHP_SESSION_NONE) {
-    		session_start();
-		}
-
-    	if ($login_user){
-    	$sess_data = array(
-          	'logged_in' => 1,
-          	'email' => $login_user->email
-      	);
-      		$this->session->set_userdata($sess_data);
-      	}
-
-    	if ($register2) {
-     		redirect('user/register_student');
-    	} else {
-    		echo "Registration failed: email already exists!";
-			echo "<script>setTimeout(\"location.href = 'http://localhost/asiaplaystation/index.php/account/create2';\",1500);</script>";
-    	}
+      if ($register_user) {
+        redirect('user/login');
+      } else {
+        echo "Registration failed: email already exists!";
+      echo "<script>setTimeout(\"location.href = 'http://localhost/asiaplaystation/index.php/account/create2';\",1500);</script>";
+      }
   	}
+
+    public function login_user()
+    {
+      $email = $this->input->post('email');
+      $password = $this->input->post('password');
+
+      $login_student = $this->UserModel->login_student($email, $password);
+      $login_lecturer = $this->UserModel->login_lecturer($email, $password);
+
+      if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+      if ($login_student){
+          $sess_data = array(
+          'logged_in' => 1,
+          'email' => $login_student->email
+        );
+          $this->session->set_userdata($sess_data);
+          redirect('student/index');
+        } else if ($login_lecturer){
+          $sess_data = array(
+          'logged_in' => 1,
+          'email' => $login_lecturer->email
+        );
+          $this->session->set_userdata($sess_data);
+          redirect('lecturer/index');
+        } else {
+          echo "<script>alert('Gagal login: Cek email, password!');</script>";
+          redirect('user/login');
+        }
+    }
+
+
 
 }
