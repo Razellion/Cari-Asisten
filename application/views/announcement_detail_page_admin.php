@@ -118,11 +118,10 @@
   <div class="container">
     <div class="row" id="attribute">
       <div class="col-md-1" id="date">
-        <a>17 April</a>
-        <a>2018</a>
+        <a><?php echo $dateCreated;?></a>
       </div>
       <div class="col-md-5" id="title">
-        <a style="text-decoration: underline;font-weight: bold;"> Rekrutmen Asisten Dosen Kalkulus IIB (FIF) </a></br>
+        <a style="text-decoration: underline;font-weight: bold;"> <?php echo $title;?> </a></br>
         <a> posted by M. Ikazra ST, MT.</a>
       </div>
         <div class="col-md-3" id="box-book">
@@ -145,18 +144,18 @@
       height: 140px;">
       </div>
         <div class="col-md-3" id="box-hat">
-          <img src="<?php echo base_url('assets/image/hat.png') ?>" alt="" id="icon-bot"> FIF
+          <img src="<?php echo base_url('assets/image/hat.png') ?>" alt="" id="icon-bot"><?php echo $faculty;?>
         </div>
         <div class="col-md-3" id="box-clock">
         <img src="<?php echo base_url('assets/image/clock.png') ?>"alt="" id="icon-bot"> Semester Genap 2018/2019
       </div>
     </div> 
     <div class="row" id="attribute" style="height: auto;width: 100%;background-color: white;margin-left: auto;margin-right: auto; margin-top: -12%;padding:3%">
-        lorem ipsum dolor amet
+        <?php echo $content;?>
     </div>
     <div class="row" id="attribute" style="height: auto;width: 100%;background-color: #dbdad7;margin-right: auto; margin-top:0;padding-top:10px;padding-bottom:10px;padding-left:45%">
       <div class="col-md-3">
-        <a href=""><img src="<?php echo base_url('assets/image/delete.png') ?>"alt="" id="button"></a><p style="text-align: left;margin-left:-5%">Delete Post</p>
+        <a href="<?php echo site_url("admin/delete_announcement/$id"); ?>"><img src="<?php echo base_url('assets/image/delete.png') ?>"alt="" id="button"></a><p style="text-align: left;margin-left:-5%">Delete Post</p>
       </div>
     </div>
     <div class="row" id="attribute" style="height: auto;width: 100%;margin-left: auto;margin-right: auto;margin-top: 5%">

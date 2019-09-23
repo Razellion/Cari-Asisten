@@ -19,7 +19,9 @@
       </select>
     </div>
   </div>
+
   <div class="container" style="margin-top:30px;">
+     <?php foreach($announcement as $item) : ?>
     <div class="row">
       <div class="col-lg">
         <div class="card w-100" style="border:2px solid black; height:150px">
@@ -28,14 +30,13 @@
               <div class="box-left" style="background-color: #C90014" style="float:left; height:100%">
                 <p></p>
                 <br/>
-                <h3 style="color:white; ">20 Agustus</h3>
-                <h3 style="text-align:center;color:white;">2019</h3>
+                <h3 style="color:white; "><?= $item->dateCreated ?></h3>
               </div>
               <div class="box-right" style="float:right; margin-left:10px;">
                 <br/>
-                <h5 class="card-title">Lorep Ipsum</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-danger" style="margin-left:800px">View Post Detail</a>
+                <h5 class="card-title"><?= $item->title ?></h5>
+                <p class="card-text"><?= $item->content ?></p>
+                <a href="<?php echo site_url();?>/admin/page_detail/<?= $item->id ?>" class="btn btn-danger" style="margin-left:800px">View Post Detail</a>
               </div>
             </div>
           </div>
@@ -43,27 +44,6 @@
       </div>
     </div>
     <br/>
-    <div class="row">
-      <div class="col-lg">
-        <div class="card w-100" style="border:2px solid black; height:150px">
-          <div class="container" style="padding-left:0px;padding-right:0px;">
-            <div class="row no-gutters" style="height:146px">
-              <div class="box-left" style="background-color: #C90014" style="float:left; height:100%">
-                <p></p>
-                <br/>
-                <h3 style="color:white; ">20 Agustus</h3>
-                <h3 style="text-align:center;color:white;">2019</h3>
-              </div>
-              <div class="box-right" style="float:right; margin-left:10px;">
-                <br/>
-                <h5 class="card-title">Lorep Ipsum</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-danger" style="margin-left:800px">View Post Detail</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <?php endforeach ?>
   </div>
 </body>
