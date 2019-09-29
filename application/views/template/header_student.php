@@ -25,4 +25,5 @@
     </nav>
     <div class="nav" style="background-color: #C90014;">
         <a class="nav-item nav-link" href="<?php echo site_url(); ?>/student/index" style="margin-left:20px;">Home</a>
+        <button style="background-color: transparent;border-color: transparent; margin-left: 80%;color: white;" onclick="window.location.href='<?php echo site_url();?>/user/register';">Registration</button>
     </div>

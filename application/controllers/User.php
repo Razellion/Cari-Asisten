@@ -130,11 +130,10 @@ class User extends CI_Controller {
 
       if (session_status() == PHP_SESSION_NONE) {
         session_start();
-    }
+      }
 
       if ($login_student){
           $sess_data = array(
-          'role' => 'student',
           'logged_in' => 1,
           'email' => $login_student->email
         );
@@ -142,7 +141,6 @@ class User extends CI_Controller {
           redirect('student/index');
         } else if ($login_lecturer){
           $sess_data = array(
-          'role' => 'lecturer',
           'logged_in' => 1,
           'email' => $login_lecturer->email
         );
