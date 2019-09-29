@@ -6,8 +6,8 @@
         <div class="foto" style="position: absolute;z-index:2; margin-left:2%; margin-top:3%;">
           <img src="<?php echo base_url(); ?>assets/image/dosen.jpeg" height="175" alt="">
           <div class="info" style="float:right; margin-top:9%;">
-            <h2 style="margin-left:3%">M. Ikazra</h2>
-            <h3>NIP 221099123456130117</h3>
+            <h2 style="margin-left:3%"><?php echo $info['name']; ?></h2>
+            <h3>NIP <?php echo $nip['NIP']; ?></h3>
           </div>
         </div>
       </div>
