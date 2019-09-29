@@ -16,7 +16,7 @@
   </head>
   <body style="background-color: #FCE4CD;">
     <nav class="navbar navbar-light" style="background-color: #FCE4CD;" >
-      <button class="navbar-brand" onclick="window.location.href='<?php echo site_url();?>/user/index';" style="background-color: transparent;border-color: transparent;">
+      <button class="navbar-brand" onclick="window.location.href='<?php echo base_url();?>';" style="background-color: transparent;border-color: transparent;">
         <img src="<?php echo base_url('assets/image/Logo_Telkom_University.png') ?>" height="60" alt="">
       </button>
       <a href="#" style="border:2px solid black; border-radius:10px">
