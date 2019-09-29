@@ -1,6 +1,6 @@
 
     <div>
-    <div class="container-create" style="margin-left: 600px; margin-right: 500px;background-color: white;border-radius: 10px; margin-top: 50px;border: 2px solid black">
+    <div class="container-create" style="margin-left: 500px; margin-right: 500px;background-color: white;border-radius: 10px; margin-top: 50px;border: 2px solid black">
   
 <form>
   <div class="form-group" style="margin-top: 30px; width:100%;">

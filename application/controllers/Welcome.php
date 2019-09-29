@@ -21,8 +21,9 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('AnnouncementModel');
+		$title['title'] = "Welcome to Cari Asisten";
 		$data['announcement']=$this->AnnouncementModel->get_all_announcement();
-		$this->load->view('template/header');
+		$this->load->view('template/header', $title);
     	$this->load->view('homepage', $data);
     	$this->load->view('template/footer');
 	}
