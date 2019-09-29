@@ -6,6 +6,8 @@ class Student extends CI_Controller {
 	public function index()
 	{
       $data['title'] = "Student";
+      $this->load->model('AnnouncementModel');
+      $data['announcement']=$this->AnnouncementModel->get_all_announcement();
       $this->load->view('template/header_student',$data);
       $this->load->view('homepage_student');
       $this->load->view('template/footer');
@@ -26,4 +28,5 @@ class Student extends CI_Controller {
       $this->load->view('upload_file');
       $this->load->view('template/footer');
 	}
+      
 }

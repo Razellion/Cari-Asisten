@@ -150,7 +150,7 @@
         <div class="col-md-3" id="box-clock">
         <img src="<?php echo base_url('assets/image/clock.png') ?>"alt="" id="icon-bot"> Semester Genap 2018/2019
       </div>
-    </div> 
+    </div>
     <div class="row" id="attribute" style="height: auto;width: 100%;background-color: white;margin-left: auto;margin-right: auto; margin-top: -12%;padding:3%">
         lorem ipsum dolor amet
     </div>
@@ -159,7 +159,7 @@
         <a href=""><img src="<?php echo base_url('assets/image/contact.png') ?>"alt="" id="button"></a><p style="text-align: left; margin-left:5%">Contact</p>
       </div>
       <div class="col-md-3">
-        <a href=""><img src="<?php echo base_url('assets/image/apply.png') ?>"alt="" id="button"></a><p style="text-align: left;margin-left:10%">Apply</p>
+        <a href="<?php echo site_url('student/apply');?>"><img src="<?php echo base_url('assets/image/apply.png') ?>"alt="" id="button"></a><p style="text-align: left;margin-left:10%">Apply</p>
       </div>
     </div>
     <!-- <div class="row" id="attribute" style="height: auto;width: 100%;margin-left: auto;margin-right: auto">
@@ -176,4 +176,3 @@
     </div> -->
   </div>
 </body>
-

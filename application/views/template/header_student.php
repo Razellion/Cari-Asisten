@@ -24,5 +24,5 @@
       </a>
     </nav>
     <div class="nav" style="background-color: #C90014;">
-        <a class="nav-item nav-link" href="#" style="margin-left:20px;">Home</a>
+        <a class="nav-item nav-link" href="<?php echo site_url(); ?>/student/index" style="margin-left:20px;">Home</a>
     </div>
