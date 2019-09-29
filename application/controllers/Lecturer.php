@@ -3,9 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Lecturer extends CI_Controller {
 
+	function __construct()
+	{
+			parent::__construct();
+			$this->load->model('LecturerModel');
+	}
+
 	public function index()
 	{
 		$data['title'] = "Lecturer";
+		$this->load->model('AnnouncementModel');
+		$data['announcement']=$this->AnnouncementModel->get_all_announcement();
 		$this->load->view('template/header_lecturer',$data);
     	$this->load->view('homepage_lecturer');
     	$this->load->view('template/footer');
@@ -45,6 +53,9 @@ class Lecturer extends CI_Controller {
 	public function my_profile()
 	{
 		$data['title'] = "My Profile";
+		$l_data = $this->LecturerModel->getProfile();
+		$data['info'] = $l_data['user'];
+		$data['nip'] = $l_data['lect'];
 		$this->load->view('template/header_lecturer',$data);
     	$this->load->view('lecturer_profile');
     	$this->load->view('template/footer');
