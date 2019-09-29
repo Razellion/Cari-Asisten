@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Student extends CI_Controller {
 
+
 	public function index()
 	{
       $data['title'] = "Student";
@@ -25,8 +26,9 @@ class Student extends CI_Controller {
 	{
       $data['title'] = "Upload File";
       $this->load->view('template/header_student',$data);
-      $this->load->view('upload_file');
+      $this->load->view('upload_form');
       $this->load->view('template/footer');
 	}
+
 
 }
