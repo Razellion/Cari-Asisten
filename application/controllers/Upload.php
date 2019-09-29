@@ -15,7 +15,7 @@ $this->load->view('upload_form', array('error' => ' ' ));
 
 function do_upload()
 {
-$config['upload_path'] = './uploads/';
+$config['upload_path'] = './uploads/studentFile/';
 $config['allowed_types'] = 'zip|rar';
 $this->load->library('upload', $config);
 
