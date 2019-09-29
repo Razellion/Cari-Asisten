@@ -127,6 +127,7 @@ class User extends CI_Controller {
 
       $login_student = $this->UserModel->login_student($email, $password);
       $login_lecturer = $this->UserModel->login_lecturer($email, $password);
+      $login_admin = $this->UserModel->login_admin($email, $password);
 
       if (session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -146,6 +147,13 @@ class User extends CI_Controller {
         );
           $this->session->set_userdata($sess_data);
           redirect('lecturer/index');
+        } else if ($login_admin){
+          $sess_data = array(
+          'logged_in' => 1,
+          'email' => $login_admin->email
+        );
+          $this->session->set_userdata($sess_data);
+          redirect('admin/index');
         } else {
           echo "<script>alert('Gagal login: Cek email, password!');</script>";
           redirect('user/login');

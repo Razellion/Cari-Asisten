@@ -28,4 +28,10 @@
         <a class="nav-item nav-link" href="<?php echo site_url('lecturer/create_announcement'); ?>">Create Announcement</a>
         <a class="nav-item nav-link" href="<?php echo site_url('lecturer/create_list'); ?>">Create List of Accepted Student</a>
         <a class="nav-item nav-link" href="<?php echo site_url('lecturer/my_profile'); ?>">My Profile</a>
+        <div style="margin-left: 50%">
+        <a class="navbar-brand" href="<?php echo site_url();?>/user/logout" style="">
+        <img src="<?php echo base_url(); ?>assets/image/logout.png" height="30" alt="" style="margin-left: 30%;"> 
+        <p style="font-size: 15px;margin-left: 15%;margin-bottom: 0;color: white">Logout</p>
+        </a>
+        </div>
     </div>

@@ -42,6 +42,19 @@ class UserModel extends CI_Model{
         return false;
     }
   }
+  public function login_admin($email, $password){
+    $this->db->select('*');
+    $this->db->from('admin');
+    $this->db->where('email',$email);
+    $this->db->where('password',$password);
+    $this->db->join('user', 'user.email = admin.user_email');
+    $result = $this->db->get();
+    if($result->num_rows()==1){
+        return $result->row(0);
+    }else{
+        return false;
+    }
+  }
 
   public function get_same($table, $email){
     $this->db->from($table);
