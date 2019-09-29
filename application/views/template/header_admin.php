@@ -25,4 +25,10 @@
     </nav>
     <div class="nav" style="background-color: #C90014;">
         <a class="nav-item nav-link" href="#" style="margin-left:20px;">Home</a>
+        <div style="margin-left: 85%">
+        <a class="navbar-brand" href="<?php echo site_url();?>/user/logout" style="">
+        <img src="<?php echo base_url(); ?>assets/image/logout.png" height="30" alt="" style="margin-left: 30%;"> 
+        <p style="font-size: 15px;margin-left: 15%;margin-bottom: 0;color: white">Logout</p>
+        </a>
+        </div>
     </div>

@@ -8,11 +8,11 @@ class User extends CI_Controller {
 
 	public function index()
 	{
-		$data['title'] = "Register";
+    $data['title'] = "Welcome to Cari Asisten";
 		$this->load->model('AnnouncementModel');
 		$data['announcement']=$this->AnnouncementModel->get_all_announcement();
 		$this->load->view('template/header',$data);
-		$this->load->view('homepage');
+		$this->load->view('homepage',$data);
 		$this->load->view('template/footer');
 
 	}
@@ -150,6 +150,12 @@ class User extends CI_Controller {
           echo "<script>alert('Gagal login: Cek email, password!');</script>";
           redirect('user/login');
         }
+    }
+
+    public function logout()
+    {
+      $this->session->sess_destroy();
+      redirect('user/index');
     }
 
 
