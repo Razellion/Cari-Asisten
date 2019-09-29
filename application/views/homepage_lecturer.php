@@ -36,7 +36,7 @@
                 <br/>
                 <h5 class="card-title"><?= $item->title ?></h5>
                 <p class="card-text"><?= $item->content ?></p>
-                <a href="<?php echo site_url();?>/user/page_detail/<?= $item->id ?>" class="btn btn-danger" style="margin-left:800px">View Post Detail</a>
+                <a href="<?php echo site_url();?>/lecturer/page_detail/<?= $item->id ?>" class="btn btn-danger" style="margin-left:800px">View Post Detail</a>
               </div>
             </div>
           </div>
