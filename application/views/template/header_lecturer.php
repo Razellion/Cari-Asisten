@@ -16,7 +16,7 @@
   </head>
   <body style="background-color: #FCE4CD;">
     <nav class="navbar navbar-light" style="background-color: #FCE4CD;" >
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="<?php echo site_url('lecturer/index'); ?>">
         <img src="<?php echo base_url(); ?>assets/image/Logo_Telkom_University.png" height="60" alt="">
       </a>
       <a href="#" style="border:2px solid black; border-radius:10px">
@@ -24,8 +24,8 @@
       </a>
     </nav>
     <div class="nav" style="background-color: #C90014;">
-        <a class="nav-item nav-link" href="#" style="margin-left:20px;">Home</a>
-        <a class="nav-item nav-link" href="#">Create Announcement</a>
-        <a class="nav-item nav-link" href="#">Create List of Accepted Student</a>
-        <a class="nav-item nav-link" href="#">My Profile</a>
+        <a class="nav-item nav-link" href="<?php echo site_url('lecturer/index'); ?>" style="margin-left:20px;">Home</a>
+        <a class="nav-item nav-link" href="<?php echo site_url('lecturer/create_announcement'); ?>">Create Announcement</a>
+        <a class="nav-item nav-link" href="<?php echo site_url('lecturer/create_list'); ?>">Create List of Accepted Student</a>
+        <a class="nav-item nav-link" href="<?php echo site_url('lecturer/my_profile'); ?>">My Profile</a>
     </div>
