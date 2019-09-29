@@ -22,9 +22,9 @@
     {
       $email = $_SESSION['email'];
       $this->db->select('*');
-      $this->db->where('email',$email);
+      $this->db->where('lecturer_user_email',$email);
       $sql = $this->db->get('announcement');
-      return $sql->row_array();
+      return $sql->result();
     }
 
     public function updatePost($id)
@@ -45,25 +45,18 @@
       $this->db->delete('announcement');
     }
 
-    public function createPost()
+    public function createPost($announcement)
     {
-      $announcement = [
-        'title' => $this->input->post('title'),
-        'content' => $this->input->post('content'),
-        'category' => $this->input->post('category'),
-        'faculty' => $this->input->post('faculty'),
-        'lecturer_user_email' => $_SESSION['email'],
-      ];
-      $this->db->insert('announcement',$data);
-      $sql = $this->db->query('SELECT id FROM announcement ORDER BY desc;');
-      $id = $sql->result_array();
 
+      $this->db->insert('announcement',$announcement);
+      $sql = $this->db->query('SELECT id FROM announcement ORDER BY id desc;');
+      $id = $sql->row_array();
       $recruitment = [
         'course' => $this->input->post('course'),
         'period' => $this->input->post('period'),
-        'announcement_id' => $id,
+        'announcement_id' => $id['id'],
       ];
-      $this->db->insert('recruitment',$data);
+      $this->db->insert('recruitment',$recruitment);
     }
 
     public function getFile($id)

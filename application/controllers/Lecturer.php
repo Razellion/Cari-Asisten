@@ -19,6 +19,42 @@ class Lecturer extends CI_Controller {
     	$this->load->view('template/footer');
 	}
 
+	public function create()
+	{
+		$announcement = [
+			'title' => $this->input->post('title'),
+			'content' => $this->input->post('content'),
+			'category' => $this->input->post('category'),
+			'faculty' => $this->input->post('faculty'),
+			'dateCreated' => date("Y\-m-d"),
+			'lecturer_user_email' => $_SESSION['email'],
+		];
+
+		$this->LecturerModel->createPost($announcement);
+		redirect('Lecturer/index');
+	}
+
+	public function update()
+	{
+		$announcement = [
+			'title' => $this->input->post('title'),
+			'content' => $this->input->post('content'),
+			'category' => $this->input->post('category'),
+			'faculty' => $this->input->post('faculty'),
+			'dateCreated' => date("Y\-m-d"),
+			'lecturer_user_email' => $_SESSION['email'],
+		];
+
+		$this->LecturerModel->createPost($announcement);
+		redirect('Lecturer/index');
+	}
+
+	public function delete($id)
+	{
+		$this->LecturerModel->deletePost($id);
+		redirect('Lecturer/my_profile');
+	}
+
 	public function create_announcement()
 	{
 		$data['title'] = "Create Announcement";
@@ -29,7 +65,10 @@ class Lecturer extends CI_Controller {
 
 	public function edit_announcement()
 	{
+		$this->load->model('AnnouncementModel');
 		$data['title'] = "Edit Announcement";
+		$data['as'] = $this->AnnouncementModel->get_data($id);
+		
 		$this->load->view('template/header_lecturer',$data);
     	$this->load->view('edit_announcement');
     	$this->load->view('template/footer');
@@ -43,9 +82,11 @@ class Lecturer extends CI_Controller {
     	$this->load->view('template/footer');
 	}
 
-	public function page_detail()
+	public function page_detail($id)
 	{
+		$this->load->model('AnnouncementModel');
 		$data['title'] = "Announcement Detail";
+		$data['as'] = $this->AnnouncementModel->get_data($id);
 		$this->load->view('template/header_lecturer',$data);
     	$this->load->view('announcement_detail_page_lecturer');
     	$this->load->view('template/footer');
@@ -53,6 +94,7 @@ class Lecturer extends CI_Controller {
 	public function my_profile()
 	{
 		$data['title'] = "My Profile";
+		$data['announcement'] = $this->LecturerModel->getAnnouncement();
 		$l_data = $this->LecturerModel->getProfile();
 		$data['info'] = $l_data['user'];
 		$data['nip'] = $l_data['lect'];

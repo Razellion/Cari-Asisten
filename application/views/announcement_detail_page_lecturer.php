@@ -122,14 +122,14 @@
         <a>2018</a>
       </div>
       <div class="col-md-5" id="title">
-        <a style="text-decoration: underline;font-weight: bold;"> Rekrutmen Asisten Dosen Kalkulus IIB (FIF) </a></br>
+        <a style="text-decoration: underline;font-weight: bold;"> Rekrutmen <?php echo $as['category']; ?> Kalkulus II (<?php echo $as['faculty']; ?>) </a></br>
         <a> posted by M. Ikazra ST, MT.</a>
       </div>
         <div class="col-md-3" id="box-book">
           <img src="<?php echo base_url('assets/image/book.png') ?>" alt="" id="icon-top"> Kalkulus IIB
         </div>
         <div class="col-md-3" id="box-card">
-        <img src="<?php echo base_url('assets/image/card.png') ?>"alt="" id="icon-top"> Asisten Dosen
+        <img src="<?php echo base_url('assets/image/card.png') ?>"alt="" id="icon-top"> <?php echo $as['category']; ?>
       </div>
     </div>
     <div class="row" id="attribute">
@@ -145,21 +145,21 @@
       height: 140px;">
       </div>
         <div class="col-md-3" id="box-hat">
-          <img src="<?php echo base_url('assets/image/hat.png') ?>" alt="" id="icon-bot"> FIF
+          <img src="<?php echo base_url('assets/image/hat.png') ?>" alt="" id="icon-bot"> <?php echo $as['faculty']; ?>
         </div>
         <div class="col-md-3" id="box-clock">
         <img src="<?php echo base_url('assets/image/clock.png') ?>"alt="" id="icon-bot"> Semester Genap 2018/2019
       </div>
-    </div> 
+    </div>
     <div class="row" id="attribute" style="height: auto;width: 100%;background-color: white;margin-left: auto;margin-right: auto; margin-top: -12%;padding:3%">
-        lorem ipsum dolor amet
+        <p><?php echo $as['content']; ?></p>
     </div>
     <div class="row" id="attribute" style="height: auto;width: 100%;background-color: #dbdad7;margin-right: auto; margin-top:0;padding-top:10px;padding-bottom:10px;padding-left:38%">
       <div class="col-md-3">
         <a href=""><img src="<?php echo base_url('assets/image/edit.png') ?>"alt="" id="button"></a><p style="text-align: left; margin-left:0%">Edit Post</p>
       </div>
       <div class="col-md-3">
-        <a href=""><img src="<?php echo base_url('assets/image/delete.png') ?>"alt="" id="button"></a><p style="text-align: left;margin-left:-5%">Delete Post</p>
+        <a href="<?php echo site_url("lecturer/delete/"); ?><?=$as['id']?>"><img src="<?php echo base_url('assets/image/delete.png') ?>"alt="" id="button"></a><p style="text-align: left;margin-left:-5%">Delete Post</p>
       </div>
     </div>
     <div class="row" id="attribute" style="height: auto;width: 100%;margin-left: auto;margin-right: auto;margin-top: 5%">
@@ -199,4 +199,3 @@
     </div> -->
   </div>
 </body>
-

@@ -1,18 +1,20 @@
-
+<form action="<?php echo site_url('Lecturer/create') ?>" method="POST">
   <div class="container">
-  	<form>
-  <div class="form-group" style="margin-top: 30px">
+
+  <div style="margin-top: 30px">
    <h1 style="text-align: center; font-family: cursive; padding-bottom: 20px;font-weight: bold;color: black">CREATE ANNOUNCEMENT</h1>
   </div>
+
   <div class="row">
     <div class="col-md-7">
+
       	<div  style="background-color: white; padding-bottom: 15px; border-radius: 5px;padding-left: 10px">
   			<label for="title" style="font-size: 17px; text-align: center; font-family: cursive; margin-top: 30px">Title:</label>
-    		<input type="text" id="title" style=" width:80%; padding-left:250px;border-radius: 3px; border:2px solid black; margin-left: 20px;"> <br/>
+    		<input type="text" name="title" style=" width:80%; padding-left:250px;border-radius: 3px; border:2px solid black; margin-left: 20px;"> <br/>
     		<label for="course" style="font-size: 17px; text-align: center; font-family: cursive; ">Course:</label>
-   			 <input type="text" id="course" style=" width:33%; border-radius: 3px;border:2px solid black; margin-left: 5px">
+   			 <input type="text" name="course" style=" width:33%; border-radius: 3px;border:2px solid black; margin-left: 5px">
    			 	<label for="periode" style="font-size: 17px; text-align: center; font-family: cursive; ">Periode:</label>
-   			 <input type="text" id="periode" style="width:35%; border-radius: 3px;border:2px solid black">
+   			 <input type="text" name="period" style="width:35%; border-radius: 3px;border:2px solid black">
     	</div>
     </div>
     <div class="col-md-5">
@@ -46,14 +48,8 @@
 			<input type="textarea" name="content" style="border-radius: 3px;border:2px solid black; width: 1100px; height:220px;">
 		</div>
   </div>
-</form>
+  <input type="submit" class="btn btn-primary" value="Post Announcement" style="align-content: center; margin-left: 750px; background-color: #cc0000;margin-bottom: 50px; margin-top: 30px;font-family: cursive; color:white">
 </div>
-
-
-  <button type="submit" class="btn btn-primary" style="align-content: center; margin-left: 750px; background-color: #cc0000;margin-bottom: 50px; margin-top: 30px;font-family: cursive;">Post Announcement</button>
 </form>
-    </div>
-
-  </div>
 </body>
 </html>
