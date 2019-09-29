@@ -28,5 +28,5 @@ class Student extends CI_Controller {
       $this->load->view('upload_file');
       $this->load->view('template/footer');
 	}
-      
+
 }
