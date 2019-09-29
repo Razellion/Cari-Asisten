@@ -72,10 +72,14 @@ class User extends CI_Controller {
       	'name' => $name,
       	'phoneNumber' => $phoneNumber
     	);
+      $student_insert = array (
+      'user_email' => $email,
+      'nim' => $nim
+      );
 
     	$register_user = $this->UserModel->register_user($user_insert, $email);
 
-    	$register_student = $this->UserModel->register_student($nim, $email);
+    	$register_student = $this->UserModel->register_student($student_insert, $email);
 
        if ($register_user) {
         redirect('user/login');
@@ -93,8 +97,6 @@ class User extends CI_Controller {
     	$name = $this->input->post('name');
     	$nip = $this->input->post('nip');
     	$phoneNumber = $this->input->post('phoneNumber');
-      $picProfile ="assets/image/";
-    	$picProfile .= $this->input->post('picProfile');
 
     	$user_insert = array (
       	'password' => $password,
@@ -103,22 +105,46 @@ class User extends CI_Controller {
       	'phoneNumber' => $phoneNumber
     	);
 
-    	$lecturer_insert = array (
-    	'picProfile' => $picProfile,
-    	'nip' => $nip
-    	);
+      $sess_data = array (
+        'nip' => $nip,
+        'email' => $email
+      );
 
     	$register_user = $this->UserModel->register_user($user_insert, $email);
-
-    	$register_lecturer = $this->UserModel->register_student($lecturer_insert, $email);
+      $this->session->set_userdata($sess_data);
 
       if ($register_user) {
-        redirect('user/login');
-      } else {
+        redirect('user/uploadPic');
+        } else {
         echo "Registration failed: email already exists!";
-      echo "<script>setTimeout(\"location.href = 'http://localhost/asiaplaystation/index.php/account/create2';\",1500);</script>";
+        echo "<script>setTimeout(\"location.href = 'http://localhost/asiaplaystation/index.php/account/create2';\",1500);</script>";
       }
   	}
+
+    public function uploadPic(){
+      $data['title'] = "Register Lecturer";
+      $this->load->view('template/header',$data);
+      $this->load->view('upload_picture');
+      $this->load->view('template/footer');
+    }
+
+    public function uploadPic2(){
+      $this->load->model('UserModel');
+      $picProfile = $this->input->post('picProfile');
+      $lecturer_insert = array (
+        'user_email' => $this->session->userdata('email'),
+        'picProfile' => $picProfile,
+        'nip' => $this->session->userdata('nip')
+        );
+
+        $register_lecturer = $this->UserModel->register_lecturer($lecturer_insert,$this->session->userdata('email'));
+        if ($register_lecturer){
+          redirect('user/login');
+        }else {
+        echo "Registration failed: email already exists!";
+        echo "<script>setTimeout(\"location.href = 'http://localhost/Cari-Asisten';\",1500);</script>";
+      }
+    }
 
     public function login_user()
     {
