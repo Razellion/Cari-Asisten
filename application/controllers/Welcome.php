@@ -20,9 +20,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['title'] = "Selamat Datang di Cari Asisten";
-		$this->load->view('template/header',$data);
-    	$this->load->view('homepage');
+		$this->load->model('AnnouncementModel');
+		$data['announcement']=$this->AnnouncementModel->get_all_announcement();
+		$this->load->view('template/header');
+    	$this->load->view('homepage', $data);
     	$this->load->view('template/footer');
 	}
 }
