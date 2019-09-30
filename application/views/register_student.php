@@ -1,5 +1,4 @@
 	<div>
-		<form>
 			<div class="container-create"style="width: 500px;height: 430px;background-color:white;color:black;margin-left: 35%; margin-top: 50px; border-radius: 15px; border: 2px solid black;">
 			<form method='post' action='<?php echo site_url("user/createAccStudent");?>'>
 			<h1 style=" margin-bottom:10px; font-size: 30px; padding-left: 10px; padding-top: 10px; text-align: left; font-family: cursive;">Register as Student</h1>
@@ -31,10 +30,7 @@
 				</div>
 			</div>
 			</form>
-			</div>
-		</form>
-		
-
+			</div>	
 	</div>
 </body>
 </html>

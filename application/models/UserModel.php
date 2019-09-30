@@ -84,21 +84,16 @@ class UserModel extends CI_Model{
     }
   }
 
-  public function register_student($data, $email){
-    $sql = $this->UserModel->get_same('user', $email);
-    if($sql == FALSE){
-        return false;
+  public function register_student($data){
+  $insert = $this->db->insert('student', $data);
+    if ($insert){
+      return TRUE;
     }else{
-        $insert = $this->db->insert('student', $data);
-        if ($insert){
-          return TRUE;
-        }else{
-          return FALSE;
-        }
+      return FALSE;
     }
   }
 
-  public function register_lecturer($data, $email){
+  public function register_lecturer($data){
         $insertLecturer = $this->db->insert('lecturer', $data);
         if ($insertLecturer){
           return TRUE;

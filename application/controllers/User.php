@@ -79,7 +79,7 @@ class User extends CI_Controller {
 
     	$register_user = $this->UserModel->register_user($user_insert, $email);
 
-    	$register_student = $this->UserModel->register_student($student_insert, $email);
+    	$register_student = $this->UserModel->register_student($student_insert);
 
        if ($register_user) {
         redirect('user/login');
@@ -137,7 +137,7 @@ class User extends CI_Controller {
         'nip' => $this->session->userdata('nip')
         );
 
-        $register_lecturer = $this->UserModel->register_lecturer($lecturer_insert,$this->session->userdata('email'));
+        $register_lecturer = $this->UserModel->register_lecturer($lecturer_insert);
         if ($register_lecturer){
           redirect('user/login');
         }else {
