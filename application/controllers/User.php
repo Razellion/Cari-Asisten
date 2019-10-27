@@ -19,7 +19,7 @@ class User extends CI_Controller {
 
 	public function register()
 	{
-		$data['title'] = "Register Student";
+		$data['title'] = "Registration";
 		$this->load->view('template/header',$data);
 		$this->load->view('register');
 		$this->load->view('template/footer');
@@ -27,7 +27,7 @@ class User extends CI_Controller {
 
 	public function register_student()
 	{
-		$data['title'] = "Register Student";
+		$data['title'] = "Register as Student";
 		$this->load->view('template/header',$data);
 		$this->load->view('register_student');
 		$this->load->view('template/footer');
@@ -35,7 +35,7 @@ class User extends CI_Controller {
 
 	public function register_lecturer()
 	{
-		$data['title'] = "Register Lecturer";
+		$data['title'] = "Register as Lecturer";
 		$this->load->view('template/header',$data);
 		$this->load->view('register_lecturer');
 		$this->load->view('template/footer');
@@ -117,7 +117,7 @@ class User extends CI_Controller {
         redirect('user/uploadPic');
         } else {
         echo "Registration failed: email already exists!";
-        echo "<script>setTimeout(\"location.href = 'http://localhost/asiaplaystation/index.php/account/create2';\",1500);</script>";
+        echo "<script>setTimeout(\"location.href = 'http://localhost/Cari-Asisten';\",1500);</script>";
       }
   	}
 

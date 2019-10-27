@@ -7,7 +7,7 @@
         <br/>
 
 </div>
-        <button type="submit" class="btn-danger" value="upload" style=" width: 10%; height: 10%; margin-left:45%;"></button>
+        <button type="submit" class="btn-danger" value="upload" style=" width: 10%; height: 10%; margin-left:45%;">Upload</button>
         </form>
 </body>
 </html>
